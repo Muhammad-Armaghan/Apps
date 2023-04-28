@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <Form onsubmit="PercCalc(); return false;">
+
+        <H1>Percentage Calculator</H1>
+        <br>
+<Div>
+    <label for="OM">Obtained Marks</label>
+    <input type="number" name="OM" id="Std_Obt_mrk">
+</Div>
+<br>
+
+<div>
+<label for="TM"> Total Marks</label>
+<input type="number" name="TM" id="Std_Ttl_mrk">
+</div>
+<br>
+
+<div>
+    <button type="Submit">Calculate</button>
+</div>
+
+<div>
+    <h1 id="answer">Congrats</h1>
+</div>
+
+
+
+</Form>
+
+
+<Script>
+
+function PercCalc() {
+    
+
+let Total_Marks = document.querySelector("#Std_Ttl_mrk").value;
+let Obtained_Marks = document.querySelector("#Std_Obt_mrk").value;
+let Result= Obtained_Marks / Total_Marks *100
+  let fix=Result.toFixed(3) 
+
+
+
+console.log("You have got " + Result + "%")
+document.querySelector("#answer").innerHTML=  ("You have got " + Result + "%") //to keep in mind
+document.querySelector("#answer").innerHTML=  (`You have got ${fix} % `)
+}
+
+
+
+
+
+
+
+</Script>
+    
+
+</body>
+</html>

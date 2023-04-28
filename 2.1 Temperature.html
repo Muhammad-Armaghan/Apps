@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature </title>
+</head>
+<body>
+
+    <form onsubmit="answer() ; return false;">
+    
+<div>
+    <h1>Temperature checking Site</h1>
+</div>
+<br><br>
+        <div>
+             <label for="temp" >Temperature in your Surrounding</label>
+             <input type="number" name="temp" id="temperature">
+        </div>
+       <br>
+
+
+         <div>
+        <button type="submit"> Check</button>
+    </div>
+    <br>
+    <div>
+        <h2 id="Result"></h2>
+    </div>
+ 
+    <script>
+  function answer() {
+
+   let thetemp= document.querySelector("#temperature").value;
+    
+   if( thetemp >=30 && thetemp <38) {
+      document.querySelector("#Result").innerHTML = (`Its Warm outside and you should wear protective Sunscreen`)}
+   
+else if(thetemp >=20 && thetemp <30){document.querySelector("#Result").innerHTML = ("You will enjoy the weather cause its pleasant outside")}
+
+else if( thetemp >=15 && thetemp <20) {
+    document.querySelector("#Result").innerHTML = ("The Temp is moderate and is neither too warm nor too cold")}
+
+else if( thetemp >=10 && thetemp <15){
+    document.querySelector("#Result").innerHTML = ("It is a little cold outside and you should probably wear more clothes")}
+
+
+else if (thetemp >=0 && thetemp <10){
+    document.querySelector("#Result").innerHTML = ("It is really Cold outside and you shouldn't go out")}
+    
+    
+    else if (thetemp <0){
+    document.querySelector("#Result").innerHTML = ("the atmosphere is too cold and You should Avoid going out at all costs")}
+
+    else if (thetemp <-35 ){
+    document.querySelector("#Result").innerHTML = ("your body will give in to the cold and you WILL die") }
+    
+
+else { document.querySelector("#Result").innerHTML = ("The Warmth is harmful for your body and you must turn your AC on")}
+
+
+
+
+  }
+    </script>
+
+
+    
+    </form>
+    
+</body>
+</html>

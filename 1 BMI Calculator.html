@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body>
+
+    <form onsubmit="BMI(); return false;"> 
+
+
+
+<h1 class="alir">BMI Calculator</h1>
+<br>
+
+
+<div>
+     <label for="hgt" class="alir">Height (m)</label>
+    <input type="text" name="hgt" id="std_hgt" >
+    
+</div>
+<br>
+
+<div>
+     <label for="wgt" class="alir">Weight (Kg)</label>
+    <input type="number" name="wgt" id="std_wgt" >
+</div>
+<br>
+
+<div>
+<button type="submit" class="alir">Calculate</button>
+</div>
+
+<div>
+<h1 id="answer" class="alir"></h1>
+<h1 id="category" class="alir"></h1>
+</div>
+
+    </form>
+</class>
+    <script>
+
+function BMI() {
+          let Prsn_wgt= document.querySelector("#std_wgt").value;
+          let Prsn_hgt=document.querySelector("#std_hgt").value;
+          let result= Prsn_wgt/ (Prsn_hgt*Prsn_hgt) 
+          let fix= result
+
+          console.log(`Your BMI is ${result} `)
+          document.querySelector("#answer").innerHTML = (`Your BMI is ${fix} kg/㎡`) 
+         
+          
+          
+if( fix <18.5 ) {
+    document.querySelector("#category").innerHTML = (`Your BMI falls within the Underweight Range`)}
+
+else if (fix >=18.5 && fix<25){
+    document.querySelector("#category").innerHTML= (`Your BMI falls within the Healthy Range`)
+}
+
+else if (fix >=25 && fix<30){
+    document.querySelector("#category").innerHTML= (`Your BMI falls within the Overweight Range`)}
+   
+else if (fix >=30 ){
+    document.querySelector("#category").innerHTML= (`Your BMI falls within the Obesity Range`)}
+
+
+
+    
+
+}
+    </script>
+
+
+
+<link rel="stylesheet" href="./8 index.css">
+</body>
+</html>
